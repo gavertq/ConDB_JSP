@@ -26,26 +26,24 @@
 	PreparedStatement ps2 = con2.prepareStatement(sql);
 	ps2.setString(1, request.getParameter("id"));
 	ResultSet rs2 = ps2.executeQuery();
-	
+
 	if(rs2.next()){
-		out.print("1");
 		if(request.getParameter("pwd").equals(rs2.getString("PWD"))){
-			session.setAttribute("loginUser", rs2.getString("name"));%>
-								
-			<script type="text/javascript">
+			session.setAttribute("loginUser", rs2.getString("name"));%>								
+			<script>
 			alert(<%=rs2.getString("name")%>+"님 반값습니다");
 			location.href="quiz2_3.jsp";
-			</script>			
-		<%}else{%>
-			out.print("2");
-			<script type="text/javascript">
+			</script>		
+				
+		<%}else{ %>
+			<script>
 			alert("일치하는 비밀번호가 없습니다");
 			//location.href="quiz2_1.jsp";
 			</script>
 		<%}%>
+		
 	<%}else{%>
-	out.print("3");
-		<script type="text/javascript">
+		<script>
 		alert("일치하는 아이디가 없습니다");
 		//location.href="quiz2_1.jsp";
 		</script>

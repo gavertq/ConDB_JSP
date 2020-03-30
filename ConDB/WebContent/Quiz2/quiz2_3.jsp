@@ -32,11 +32,11 @@ alert(<%=session.getAttribute("loginUser")%>+"님 반갑습니다");
 	<tr><th>아이디</th><th>비밀번호</th><th>이름</th><th>주소</th><th>전화번호</th></tr>
 	<%while(rs3.next()){%>
 	<tr>
-		<td><%=rs3.getString("ID") %></td>
-		<td><%=rs3.getString("PWD") %></td>
-		<td><%=rs3.getString("NAME") %></td>
-		<td><%=rs3.getString("ADDR") %></td>
-		<td><%=rs3.getString("TEL") %></td>
+		<td>1<%=rs3.getString("ID") %></td>
+		<td>2<%=rs3.getString("PWD") %></td>
+		<td>3<%=rs3.getString("NAME") %></td>
+		<td>4<%=rs3.getString("ADDR") %></td>
+		<td>5<%=rs3.getString("TEL") %></td>
 	</tr>
 	<%} %>
 	</table>
