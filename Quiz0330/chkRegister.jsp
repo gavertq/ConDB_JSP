@@ -17,6 +17,7 @@ response.setCharacterEncoding("utf-8");
  %>
 	<%
 	int flag=0;
+	session.setAttribute("WARN", "yeah");
 	String pwd = (String)request.getParameter("pwd");
 	String pwdC = (String)request.getParameter("pwdCheck");
 	if(request.getParameter("id").isEmpty()){
@@ -34,6 +35,9 @@ response.setCharacterEncoding("utf-8");
 	}else if(!request.getParameter("pwd").isEmpty() && !pwd.equals(pwdC)){
 		flag=1;%>
 		<script>
+		<% 				
+		session.setAttribute("WARN", "nope");
+		%>
 		alert("비밀번호를 확인해주세요");				
 		location.href="register.jsp"; 
 		</script>
@@ -41,6 +45,7 @@ response.setCharacterEncoding("utf-8");
 	}
 	
 	if(flag==0){
+		session.setAttribute("WARN", "yeah");
 	Class.forName("oracle.jdbc.driver.OracleDriver");
 	String url = "jdbc:oracle:thin:@localhost:1521:xe";
 	String idD = "java";
