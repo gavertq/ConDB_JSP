@@ -10,7 +10,7 @@
 	<%!int num = 0; %>
 	 function num(){
 		<% 				
-			session.setAttribute("WARN", num);
+			session.setAttribute("WARN_Zero", num);
 			num++;
 		%>
 	 }
@@ -30,13 +30,15 @@
 </form>
 
 
-	<%int p = (int)session.getAttribute("WARN");
-	if(p==0){
-		out.print("<script>document.getElementById(\'warnPW\').innerHTML = \"(*필수 항목)\"</script>");
-	}else{
+	<%String p = (String)session.getAttribute("WARN");
+	try{
+	if(p.equals("nope")){
 		out.print("<script>document.getElementById(\'warnPW\').innerHTML = \"불일치!\"</script>");
-		out.print("<script>document.getElementById(\'warnPW\').style.color = \"red\"</script>");
-	}%>
+		out.print("<script>document.getElementById(\'warnPW\').style.color = \"red\"</script>");		
+	}else{
+		out.print("<script>document.getElementById(\'warnPW\').innerHTML = \"(*필수 항목)\"</script>");
+	}
+	}catch(Exception e){out.print("<script>document.getElementById(\'warnPW\').innerHTML = \"(*필수 항목)\"</script>");}%>
 
 </body>
 </html>
