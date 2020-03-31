@@ -19,7 +19,7 @@
 </head>
 <body onload="num()">
 <form action="chkRegister.jsp" method="post">
-	<input type="text" placeholder="아이디" name="id">(*필수 항목)<br>
+	<input type="text" placeholder="아이디" name="id">(*필수 항목)<button type="button" onclick="idDoubleCheck.jsp">중복 확인</button><br>
 	<input type="text" placeholder="비밀번호" name="pwd"><br>
 	<input type="text" placeholder="비밀번호 확인" name="pwdCheck">
 	<label id="warnPW"></label><br>

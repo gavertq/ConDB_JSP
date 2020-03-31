@@ -31,7 +31,6 @@
 	if(boo==true) out.print("<script>alert(\""+nameIN+"님 반갑습니다\");</script>");%>
 	
 	<%
-	
 	Class.forName("oracle.jdbc.driver.OracleDriver");
 	String url = "jdbc:oracle:thin:@192.168.0.49:1521:xe";
 	String id = "java";

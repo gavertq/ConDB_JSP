@@ -37,7 +37,7 @@
 			<script>
 			//alert(rs2.getString("NAME")+"님 반갑습니다");
 			location.href="quiz3.jsp";
-			</script>		
+			</script>
 				
 		<%}else{ %>
 			<script>
