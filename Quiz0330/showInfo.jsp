@@ -32,9 +32,8 @@ if(rsIN.next()){%>
 &nbsp;이&nbsp;&nbsp;&nbsp;&nbsp;름: <input type="text" name="nameIN" value="<%=rsIN.getString("NAME")%>"><br>
 &nbsp;주&nbsp;&nbsp;&nbsp;&nbsp;소: <input type="text" name="addrIN" value="<%=rsIN.getString("ADDR")%>"><br>
 전화번호: <input type="text" name="telIN" value="<%=rsIN.getString("TEL")%>"><br>
-<input type="submit" value="수정">
-</form>
-<button onclick="location.href='deletInfo.jsp'">삭제</button>
+<button type="button" onclick="location.href='deletInfo.jsp'">삭제</button> <!-- form 안에서 버튼 이벤트를 따로 주려면 type=button 추가 필요. -->
+</form>		                    <!-- 그렇지 않으면 가장 첫번째로오는 버튼, summit의 기능만 발생한다 -->		
 <%} %>
 
 </body>
